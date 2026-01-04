@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gramm in Milliliter umrechnen | Einfache Küchen-Umrechner</title>
+  <meta name="description" content="Kostenloser Online-Umrechner für Küche und Backen: gramm in milliliter und umgekehrt. Unterstützt Wasser, Milch, Öl, Honig und mehr mit realistischen Dichten.">
+  <meta name="keywords" content="gramm in ml, ml in gramm, küchen umrechner, milch gramm in ml, wasser milliliter, volumen in gewicht">
+  <meta property="og:title" content="Gramm in Milliliter umrechnen">
+  <meta property="og:description" content="Schneller Online-Rechner für Gramm & Milliliter. Wähle Zutat, gib deinen Wert ein und erhalte die Umrechnung in einem Klick.">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://example.github.io/einheits-umrechner/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: #0f766e;
+      --secondary: #134e4a;
+      --bg: #f8fafc;
+      --text: #0f172a;
+      --card: #ffffff;
+      --muted: #64748b;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(120deg, rgba(15,118,110,0.9), rgba(19,78,74,0.9)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: #fff;
+      padding: 72px 16px;
+      text-align: center;
+    }
+    header h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; }
+    header p { margin: 0 auto; max-width: 800px; font-size: 1.05rem; color: #e2f3f1; }
+    main { max-width: 1100px; margin: -64px auto 64px; padding: 0 16px; }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(15,23,42,0.12);
+      padding: 28px;
+      margin-bottom: 28px;
+      border: 1px solid #e2e8f0;
+    }
+    .card h2 { margin-top: 0; color: var(--secondary); }
+    .converter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      align-items: end;
+    }
+    label { display: block; font-weight: 600; margin-bottom: 6px; }
+    select, input, button {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      font-size: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    select:focus, input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15,118,110,0.15); }
+    button {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover { background: #0d6a63; }
+    .result {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--secondary);
+      margin-top: 12px;
+    }
+    .density-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 12px; }
+    .density-list li { background: #f1f5f9; padding: 12px 14px; border-radius: 12px; }
+    .faq details { border: 1px solid #e2e8f0; padding: 12px 14px; border-radius: 10px; background: #f8fafc; }
+    .faq summary { font-weight: 700; cursor: pointer; }
+    footer { text-align: center; padding: 28px 12px 40px; color: var(--muted); font-size: 0.95rem; }
+    .badge { display: inline-block; background: rgba(15,118,110,0.12); color: var(--secondary); padding: 6px 10px; border-radius: 999px; font-weight: 700; margin-bottom: 12px; }
+    @media (max-width: 640px) { header { padding: 56px 12px; } main { margin-top: -48px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">Küchen-Helfer</div>
+    <h1>Gramm in Milliliter umrechnen – schnell & verlässlich</h1>
+    <p>Dieser kostenlose Küchen-Umrechner macht das Backen und Kochen einfacher. Wähle die Zutat, gib Gramm oder Milliliter ein und erhalte sofort die passende Menge. Ideal für Milch, Wasser, Öl, Honig und viele weitere Zutaten.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="converter-heading">
+      <h2 id="converter-heading">Umrechner für Gramm ⇄ Milliliter</h2>
+      <p>Gib deinen Wert ein, wähle die Richtung und erhalte die passende Menge für die ausgewählte Zutat.</p>
+      <form class="converter-grid" id="converter-form">
+        <div>
+          <label for="ingredient">Zutat</label>
+          <select id="ingredient" name="ingredient" aria-label="Zutat auswählen">
+            <option value="water">Wasser</option>
+            <option value="milk" selected>Milch</option>
+            <option value="oil">Sonnenblumenöl</option>
+            <option value="olive-oil">Olivenöl</option>
+            <option value="honey">Honig</option>
+            <option value="flour">Weizenmehl</option>
+            <option value="sugar">Zucker</option>
+            <option value="cream">Sahne</option>
+            <option value="butter">Butter, geschmolzen</option>
+          </select>
+        </div>
+        <div>
+          <label for="direction">Richtung</label>
+          <select id="direction" name="direction" aria-label="Umrechnungsrichtung">
+            <option value="g-to-ml" selected>Gramm → Milliliter</option>
+            <option value="ml-to-g">Milliliter → Gramm</option>
+          </select>
+        </div>
+        <div>
+          <label for="amount">Menge</label>
+          <input id="amount" type="number" name="amount" inputmode="decimal" min="0" step="0.1" placeholder="z.B. 250" required aria-describedby="unit-hint">
+          <small id="unit-hint">Dezimalwerte mit Punkt oder Komma möglich.</small>
+        </div>
+        <div>
+          <button type="submit">Jetzt umrechnen</button>
+          <div class="result" id="result" role="status" aria-live="polite"></div>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="density-heading">
+      <h2 id="density-heading">Dichten der gängigsten Küchenzutaten</h2>
+      <p>Die Umrechnung zwischen Gramm und Milliliter hängt von der Dichte der Zutat ab. Wir nutzen geprüfte Durchschnittswerte pro Milliliter.</p>
+      <ul class="density-list" id="density-list"></ul>
+    </section>
+
+    <section class="card" aria-labelledby="seo-heading">
+      <h2 id="seo-heading">Warum gramm in ml umrechnen?</h2>
+      <p>Viele Rezepte nutzen je nach Region entweder Gewichte oder Volumina. In Deutschland und Österreich steht meist die Gewichtsangabe in Gramm oder Kilogramm im Vordergrund, während internationale Rezepte häufig Milliliter oder Cups nennen. Mit diesem Umrechner überträgst du Rezepte präzise, ohne dass Geschmack oder Konsistenz leiden.</p>
+      <div class="faq">
+        <details>
+          <summary>Welche Zutaten kann ich umrechnen?</summary>
+          <p>Aktuell unterstützen wir Wasser, Milch, Sonnenblumenöl, Olivenöl, Honig, Weizenmehl, Zucker, Sahne und flüssige Butter. Du kannst die Liste jederzeit erweitern, indem du im Quellcode neue Dichten hinterlegst.</p>
+        </details>
+        <details>
+          <summary>Warum unterscheidet sich die Dichte?</summary>
+          <p>Die Dichte hängt von Temperatur und Zusammensetzung ab. Honig ist zum Beispiel deutlich schwerer als Wasser, Öl hingegen leichter. Die angegebenen Werte sind Durchschnittswerte bei Zimmertemperatur und funktionieren für die meisten Rezepte sehr gut.</p>
+        </details>
+        <details>
+          <summary>Was ist der Unterschied zwischen Gramm und Milliliter?</summary>
+          <p>Gramm misst Gewicht (Masse), Milliliter misst Volumen. Nur bei Wasser ist 1 g etwa 1 ml. Bei anderen Zutaten brauchst du den Umrechnungsfaktor, den du hier automatisch erhältst.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Einheits-Umrechner</strong> – optimiert für GitHub Pages. Perfekt für die schnelle Küchen-Umrechnung von Gramm in Milliliter.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
