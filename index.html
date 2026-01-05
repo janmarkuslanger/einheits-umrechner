@@ -85,6 +85,7 @@
     .faq details { border: 1px solid #e2e8f0; padding: 12px 14px; border-radius: 10px; background: #f8fafc; }
     .faq summary { font-weight: 700; cursor: pointer; }
     footer { text-align: center; padding: 28px 12px 40px; color: var(--muted); font-size: 0.95rem; }
+    footer .faq { max-width: 820px; margin: 16px auto 0; text-align: left; }
     .badge { display: inline-block; background: rgba(15,118,110,0.12); color: var(--secondary); padding: 6px 10px; border-radius: 999px; font-weight: 700; margin-bottom: 12px; }
     @media (max-width: 640px) { header { padding: 56px 12px; } main { margin-top: -48px; } }
   </style>
@@ -146,7 +147,7 @@
       <div class="faq">
         <details>
           <summary>Welche Zutaten kann ich umrechnen?</summary>
-          <p>Aktuell unterstützen wir Wasser, Milch, Sonnenblumenöl, Olivenöl, Honig, Weizenmehl, Zucker, Sahne und flüssige Butter. Du kannst die Liste jederzeit erweitern, indem du im Quellcode neue Dichten hinterlegst.</p>
+          <p>Aktuell unterstützen wir Wasser, Milch, Sonnenblumenöl, Olivenöl, Honig, Weizenmehl, Zucker, Sahne und flüssige Butter. Fehlt etwas? Orientiere dich an einer ähnlichen Zutat in der Liste oder nutze einen groben Richtwert von 1 g ≈ 1 ml und passe nach Geschmack an.</p>
         </details>
         <details>
           <summary>Warum unterscheidet sich die Dichte?</summary>
@@ -161,7 +162,21 @@
   </main>
 
   <footer>
-    <p><strong>Einheits-Umrechner</strong> – optimiert für GitHub Pages. Perfekt für die schnelle Küchen-Umrechnung von Gramm in Milliliter.</p>
+    <p><strong>Einheits-Umrechner</strong> – dein schneller Helfer, um Rezepte zuverlässig zwischen Gramm und Milliliter zu übersetzen.</p>
+    <div class="faq" aria-label="Nützliche Hinweise">
+      <details>
+        <summary>Wie genau sind die Ergebnisse?</summary>
+        <p>Wir nutzen Durchschnittswerte gängiger Zutaten bei Zimmertemperatur. So sparst du dir Nachrechnen und kannst Rezepte auch ohne Küchenwaage sicher nachkochen.</p>
+      </details>
+      <details>
+        <summary>Wie messe ich ohne Waage?</summary>
+        <p>Gib die gewünschte Menge ein und verwende einen Messbecher oder Esslöffel, um die angezeigten Milliliter abzumessen. Bei dickflüssigen Zutaten wie Honig hilft es, den Löffel vorher leicht zu ölen.</p>
+      </details>
+      <details>
+        <summary>Was tun, wenn die Konsistenz anders wirkt?</summary>
+        <p>Jede Zutat kann je nach Marke und Temperatur etwas variieren. Taste dich bei kritischen Rezepten in kleinen Schritten heran und passe Flüssigkeit oder Mehl nach Bedarf an.</p>
+      </details>
+    </div>
   </footer>
 
   <script src="index.js"></script>
